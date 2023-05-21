@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Xarajatlarni taqqoslash</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-md">
+          <a class="navbar-brand mx-auto" href="#">Xarajatlarni taqqoslash</a>
+        </div>
+      </nav>
+    <div class="card text-center">
+        <div class="card-header mx-auto flex-grow">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Avtomobil uchun</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Kontreyler uchun</button>
+                </li>
+              </ul>
+        </div>
+            <div class="tab-content card-body" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="card">
+                        <div class="card-header">
+                            Yonilg'i sarfi xarajatni hisoblash
+                        </div>
+                        <div class="card-body">
+                          <div class="d-flex justify-content-around">
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Masofani kiriting</span>
+                              <input type="text" class="form-control" id="one" aria-describedby="basic-addon3">
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Yonilg'i sarfining chiziqli miqdori H<sub>s</sub></span>
+                              <input type="text" class="form-control" id="two" aria-describedby="basic-addon3">
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Tirkama(yarim tirkama) o'girligi G<sub>y.t.</sub></span>
+                              <input type="text" class="form-control" id="three" aria-describedby="basic-addon3">
+                            </div>
+                          </div> 
+                          
+                          <div class="d-flex justify-content-around">
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Qo'shimcha og'irlik uchun yonilg'i sarfi H<sub>y.t.</sub></span>
+                              <input type="text" class="form-control" id="four" aria-describedby="basic-addon3">
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Yuk o'girligi G<sub>y</sub></span>
+                              <input type="text" class="form-control" id="five" aria-describedby="basic-addon3">
+                            </div>
+                            
+                          </div>
+
+                          <div class="d-flex justify-content-around">
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Yuksiz holatda yonilg'i sarfi H<sub>sap</sub></span>
+                              <input type="text" class="form-control" id="six" aria-describedby="basic-addon3" placeholder=" l/100km" disabled>
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">To'xtab bo'sh turish vaqti</span>
+                              <input type="text" class="form-control" id="seven" aria-describedby="basic-addon3">
+                            </div>
+                          </div>
+                          
+                          <div class="d-flex justify-content-around">
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Transport ish hajmi W</span>
+                              <input type="text" class="form-control" id="eight" aria-describedby="basic-addon3" placeholder="0 t*km" disabled>
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Bo'sh turish vaqtidagi yonilgi sarfi</span>
+                              <input type="text" class="form-control" id="nine" aria-describedby="basic-addon3" placeholder="0 litr" disabled>
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Dizel uchun H<sub>w</sub></span>
+                              <input type="text" class="form-control" id="ten" aria-describedby="basic-addon3">
+                            </div>
+                          </div>
+
+                          <div class="d-flex justify-content-around">
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Yo'lning tekisligini hisobga oluvchi koeff. D</span>
+                              <input type="text" class="form-control" id="eleven" aria-describedby="basic-addon3" >
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Yonilg'i sarfi Q<sub>N</sub></span>
+                              <input type="text" class="form-control" id="twelve" aria-describedby="basic-addon3" placeholder="0 litr" disabled>
+                            </div>
+                            <div class="input-group m-3">
+                              <button type="submit" id="yoqilgiButton" class="btn btn-outline-primary">Hisoblash</button>
+                            </div>
+                          </div>
+
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            Texnik sarfi xarajatni hisoblash
+                        </div>
+                        <div class="card-body">
+                          <div class="d-flex justify-content-around">
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Texnik xizmat ko'rsatish narxi S<sub>tx</sub></span>
+                              <input type="text" class="form-control" id="thirteen" aria-describedby="basic-addon3">
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Texnik xizmat ko'rsatish oraliq masofa H<sub>tx</sub></span>
+                              <input type="text" class="form-control" id="fourteen" aria-describedby="basic-addon3">
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">C <sub>tx</sub></span>
+                              <input type="text" class="form-control" id="fifteen" aria-describedby="basic-addon3" placeholder="0 so'm" disabled>
+                            </div>
+                          </div>
+
+                          <div class="d-flex justify-content-around">
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Shinalarning umumiy yurish masofasi</span>
+                              <input type="text" class="form-control" id="sixteen" aria-describedby="basic-addon3">
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Shina narxi(old o'q uchun)</span>
+                              <input type="text" class="form-control" id="seventeen" aria-describedby="basic-addon3">
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Shina narxi(tirkama uchun)</span>
+                              <input type="text" class="form-control" id="eighteen" aria-describedby="basic-addon3">
+                            </div>
+                          </div>
+
+                          <div class="d-flex justify-content-around">
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Shinalar uchun umumiy xarajat</span>
+                              <input type="text" class="form-control" id="nineteen" aria-describedby="basic-addon3" placeholder="0 so'm" disabled>
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Haydovchining ish haqqi(1 km)</span>
+                              <input type="text" class="form-control" id="twenty" aria-describedby="basic-addon3">
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Haydovchining ish haqqi</span>
+                              <input type="text" class="form-control" id="twenty__one" aria-describedby="basic-addon3" placeholder="0 so'm" disabled>
+                            </div>
+                          </div>
+
+                          <div class="d-flex justify-content-around">
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Umumiy xarajatlar</span>
+                              <input type="text" class="form-control" id="twenty__two" aria-describedby="basic-addon3" placeholder="0 so'm" disabled>
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">1 km uchun umumiy xarajat</span>
+                              <input type="text" class="form-control" id="twenty__three" aria-describedby="basic-addon3" placeholder="0 so'm" disabled>
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Yuk mashinasi balans qiymati</span>
+                              <input type="text" class="form-control" id="twenty__four" aria-describedby="basic-addon3">
+                            </div>
+                          </div>
+
+                          <div class="d-flex justify-content-around">
+                            
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Tirkama balans qiymati</span>
+                              <input type="text" class="form-control" id="twenty__five" aria-describedby="basic-addon3">
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Yuk mashina amortizatsiya davri</span>
+                              <select class="form-select" id="twenty__six">
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10" selected>10</option>
+                              </select>
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Tirkama amortizatsiya davri</span>
+                              <select class="form-select" id="twenty__seven">
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10" selected>10</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="d-flex justify-content-around">
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Amortizatsiya narxi</span>
+                              <input type="text" class="form-control" id="twenty__eight" aria-describedby="basic-addon3"  placeholder="0 so'm" disabled>
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Har bir km uchun xarajat</span>
+                              <input type="text" class="form-control" id="twenty__nine" aria-describedby="basic-addon3" placeholder="0 so'm" disabled>
+                            </div>
+                            <div class="input-group m-3">
+                              <button type="submit" class="btn btn-outline-primary" id="texnikButton">Hisoblash</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                      
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex justify-content-around">
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Poyezdning o'rtacha tarkibi soni</span>
+                              <input type="text" class="form-control" id="bir" aria-describedby="basic-addon3">
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Vagon-kilometr xarajati</span>
+                              <input type="text" class="form-control" id="ikki" aria-describedby="basic-addon3"  placeholder="0 so'm" disabled>
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Uchastka tezligi</span>
+                              <input type="text" class="form-control" id="uch" aria-describedby="basic-addon3">
+                            </div>
+                          </div>
+
+                          <div class="d-flex justify-content-around">
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Terma poyezdlar qatnovi ulushi</span>
+                              <input type="text" class="form-control" id="tort" aria-describedby="basic-addon3">
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Vagon-soat xarajati</span>
+                              <input type="text" class="form-control" id="besh" aria-describedby="basic-addon3"  placeholder="0 so'm" disabled>
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Terma poyezd uchastka tezligi</span>
+                              <input type="text" class="form-control" id="olti" aria-describedby="basic-addon3">
+                            </div>
+                          </div>
+
+                          <div class="d-flex justify-content-around">
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Qo'shimcha ish vaqtini hisobga oluvchi koeff.</span>
+                              <input type="text" class="form-control" id="yetti" aria-describedby="basic-addon3">
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Konduktor brigada soat xarajati</span>
+                              <input type="text" class="form-control" id="sakkiz" aria-describedby="basic-addon3"  placeholder="0 so'm" disabled>
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Elektrovoz shartli yurish foizi</span>
+                              <input type="text" class="form-control" id="toqqiz" aria-describedby="basic-addon3">
+                            </div>
+                          </div>
+
+                          <div class="d-flex justify-content-around">
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Elektrovoz kilometr xarajati</span>
+                              <input type="text" class="form-control" id="on" aria-describedby="basic-addon3" placeholder="0 so'm" disabled>
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Elektrovoz-soat xarajati</span>
+                              <input type="text" class="form-control" id="onbir" aria-describedby="basic-addon3"  placeholder="0 so'm" disabled>
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Elektrovoz brigada-soat xarajati</span>
+                              <input type="text" class="form-control" id="onikki" aria-describedby="basic-addon3" placeholder="0 so'm" disabled>
+                            </div>
+                          </div>
+
+                          <div class="d-flex justify-content-around">
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Poyezdning brutto og'irligi</span>
+                              <input type="text" class="form-control" id="onuch" aria-describedby="basic-addon3">
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Elektrovoz og'irligi</span>
+                              <input type="text" class="form-control" id="ontort" aria-describedby="basic-addon3">
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Tonna kilometr xarajati</span>
+                              <input type="text" class="form-control" id="onbesh" aria-describedby="basic-addon3" placeholder="0 so'm" disabled>
+                            </div>
+                          </div>
+
+                          <div class="d-flex justify-content-around">
+                            <div class="input-group m-3">
+                              <span class="input-group-text">Elektrovoz sarfi xarajati</span>
+                              <input type="text" class="form-control" id="onyetti" aria-describedby="basic-addon3"  placeholder="0 so'm" disabled>
+                            </div>
+                            <div class="input-group m-3">
+                              <span class="input-group-text">1 poyezd/km uchum jami xarajat</span>
+                              <input type="text" class="form-control" id="onsakkiz" aria-describedby="basic-addon3" placeholder="0 so'm" disabled>
+                            </div>
+                          </div>
+
+                          <div class="d-flex justify-content-around">
+                            <div class="input-group m-3">
+                              <span class="input-group-text">1 tirkama tashish narxi</span>
+                              <input type="text" class="form-control" id="ontoqqiz" aria-describedby="basic-addon3"  placeholder="0 so'm" disabled>
+                            </div>
+                            <div class="input-group m-3">
+                              <button type="submit" class="btn btn-outline-primary" id="kontreylerButton">Hisoblash</button>
+                            </div>
+                          </div>
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-around">
+                          <div class="input-group m-3">
+                            <span class="input-group-text">Tirkamalar soni</span>
+                            <input type="text" class="form-control" id="yigirma" aria-describedby="basic-addon3">
+                          </div>
+                          <div class="input-group m-3">
+                            <button type="submit" class="btn btn-outline-primary" id="taqqoslashButton">Taqqoslash</button>
+                          </div>
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                          <div class="input-group m-3">
+                            <span class="input-group-text">Yarim tirkama tashish narxi</span>
+                          </div>
+                          <div class="input-group m-3">
+                            <span class="input-group-text">Avtomobil uchun</span>
+                            <input type="text" class="form-control" id="yigirmabir" aria-describedby="basic-addon3"  placeholder="0 so'm" disabled>
+                          </div>
+                          <div class="input-group m-3">
+                            <span class="input-group-text">Kontreyler uchun</span>
+                            <input type="text" class="form-control" id="yigirmaikki" aria-describedby="basic-addon3" placeholder="0 so'm" disabled>
+                          </div>
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                          <div class="input-group m-3">
+                            <span class="input-group-text">Yarim tirkama tashish narxi</span>
+                          </div>
+                          <div class="input-group m-3">
+                            <span class="input-group-text">Avtomobil uchun</span>
+                            <input type="text" class="form-control" id="yigirmauch" aria-describedby="basic-addon3"  placeholder="0 so'm" disabled>
+                          </div>
+                          <div class="input-group m-3">
+                            <span class="input-group-text">Kontreyler uchun</span>
+                            <input type="text" class="form-control" id="yigirmatort" aria-describedby="basic-addon3" placeholder="0 so'm" disabled>
+                          </div>
+                        </div>
+
+                      </div>
+                  </div>
+                </div>
+            </div>
+        <div class="card-footer text-muted">
+          
+        </div>
+      </div>
+      <script src="main.js"></script>
+      
+</body>
+</html>
